@@ -4,27 +4,29 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Button> arrayList = null;
+    ArrayList<ImageView> arrayList = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = null;
+        ImageView imageView=null;
         new CreateArr().add();
 //        Log.i("Arra",""+arrayList.size());
-        for(int i = 1;i<arrayList.size();i++){
+        for(int i = 0;i<arrayList.size();i++){
 
-            button = arrayList.get(i);
-            button.setOnClickListener(new View.OnClickListener() {
+            imageView = arrayList.get(i);
+            imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(),v.getId()+"HY",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),v.getId()+"",Toast.LENGTH_SHORT).show();
 
                 }
             });
@@ -33,73 +35,75 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class CreateArr{
-        Button button =null;
+        ImageView imageView = null;
         public  void add(){
-            arrayList = new ArrayList<Button>();
-            button = (Button) findViewById(R.id.button2);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button4);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button6);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button8);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button10);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button12);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button14);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button16);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button18);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button20);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button22);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button24);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button26);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button28);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button30);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button32);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button34);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button36);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button38);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button40);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button42);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button44);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button46);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button48);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button50);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button52);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button54);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button56);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button58);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button60);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button62);
-            arrayList.add(button);
-            button = (Button) findViewById(R.id.button64);
-            arrayList.add(button);
+            arrayList = new ArrayList<ImageView>();
+            imageView = (ImageView) findViewById(R.id.imageView2);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView4);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView6);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView8);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView10);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView12);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView14);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView16);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView18);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView20);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView22);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView24);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView26);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView28);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView30);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView32);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView34);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView36);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView38);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView40);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView42);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView44);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView46);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView48);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView50);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView52);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView54);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView56);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView58);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView60);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView62);
+            arrayList.add(imageView);
+            imageView = (ImageView) findViewById(R.id.imageView64);
+            arrayList.add(imageView);
+
+
 
 
 

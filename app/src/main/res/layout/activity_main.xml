@@ -15,478 +15,514 @@
         android:text="Button" />
 
     <TableLayout
-        android:layout_width="364dp"
-        android:stretchColumns="*"
-        android:layout_weight="1"
-        android:weightSum="8"
-        android:layout_height="370dp">
-
+        android:layout_width="match_parent"
+        android:layout_height="364dp">
 
         <TableRow
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:weightSum="8"
-            android:gravity="center">
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
 
-            <Button
-                android:id="@+id/button1"
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button2"
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView4"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button3"
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView6"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button4"
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView8"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
         </TableRow>
 
         <TableRow
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum= "8"
-            android:gravity="center">
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
 
-
-
-            <Button
-                android:id="@+id/button9"
+            <ImageView
+                android:id="@+id/imageView9"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button10"
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView11"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button11"
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView13"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button12"
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView15"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button13"
-                android:layout_width="44dp"
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button15"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button16"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="8"
-            android:gravity="center">
-
-
-            <Button
-                android:id="@+id/button17"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button18"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button19"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button20"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button21"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button22"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button23"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button24"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="8"
-            android:gravity="center">
-
-
-            <Button
-                android:id="@+id/button25"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button26"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/background_dark" />
-
-            <Button
-                android:id="@+id/button27"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button28"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/background_dark" />
-
-            <Button
-                android:id="@+id/button29"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button30"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/background_dark"
-                android:backgroundTint="@android:color/black" />
-
-            <Button
-                android:id="@+id/button31"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button32"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/background_dark"
-                android:backgroundTint="@android:color/background_dark" />
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum="8"
-            android:gravity="center"
-            android:layout_weight="1">
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
 
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
 
-            <Button
-                android:id="@+id/button33"
+            <ImageView
+                android:id="@+id/imageView18"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/background_dark" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button34"
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView20"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button35"
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView22"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/background_dark" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button36"
+            <ImageView
+                android:id="@+id/imageView23"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess2" />
+
+            <ImageView
+                android:id="@+id/imageView24"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
+        </TableRow>
 
-            <Button
-                android:id="@+id/button37"
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
+
+            <ImageView
+                android:id="@+id/imageView25"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/background_dark" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button38"
+            <ImageView
+                android:id="@+id/imageView26"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView27"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button39"
+            <ImageView
+                android:id="@+id/imageView28"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView29"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/background_dark" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button40"
+            <ImageView
+                android:id="@+id/imageView30"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView31"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
+
+            <ImageView
+                android:id="@+id/imageView32"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:color/black" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:weightSum="8"
-            android:layout_weight="1">
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
 
+            <ImageView
+                android:id="@+id/imageView33"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:color/black" />
 
-            <Button
-                android:id="@+id/button41"
+            <ImageView
+                android:id="@+id/imageView34"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button42"
+            <ImageView
+                android:id="@+id/imageView35"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView36"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button43"
+            <ImageView
+                android:id="@+id/imageView37"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView38"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button44"
+            <ImageView
+                android:id="@+id/imageView39"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/imageView40"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
+        </TableRow>
 
-            <Button
-                android:id="@+id/button45"
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
+
+            <ImageView
+                android:id="@+id/imageView41"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button46"
+            <ImageView
+                android:id="@+id/imageView42"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
+
+            <ImageView
+                android:id="@+id/imageView43"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button47"
+            <ImageView
+                android:id="@+id/imageView44"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
+
+            <ImageView
+                android:id="@+id/imageView45"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button48"
+            <ImageView
+                android:id="@+id/imageView46"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
+
+            <ImageView
+                android:id="@+id/imageView47"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
+
+            <ImageView
+                android:id="@+id/imageView48"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
 
         </TableRow>
 
         <TableRow
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum="8"
-            android:gravity="center">
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
 
+            <ImageView
+                android:id="@+id/imageView49"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
 
-
-            <Button
-                android:id="@+id/button49"
+            <ImageView
+                android:id="@+id/imageView50"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button50"
+            <ImageView
+                android:id="@+id/imageView51"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
+
+            <ImageView
+                android:id="@+id/imageView52"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button51"
+            <ImageView
+                android:id="@+id/imageView53"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
+
+            <ImageView
+                android:id="@+id/imageView54"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button52"
+            <ImageView
+                android:id="@+id/imageView55"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
+
+            <ImageView
+                android:id="@+id/imageView56"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button53"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button54"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button55"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button56"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
         </TableRow>
 
         <TableRow
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum="8"
-            android:gravity="center">
+            android:shrinkColumns="0"
+            android:stretchColumns="1">
 
-
-            <Button
-                android:id="@+id/button57"
+            <ImageView
+                android:id="@+id/imageView57"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button58"
+            <ImageView
+                android:id="@+id/imageView58"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
+
+            <ImageView
+                android:id="@+id/imageView59"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button59"
+            <ImageView
+                android:id="@+id/imageView60"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
+
+            <ImageView
+                android:id="@+id/imageView61"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button60"
+            <ImageView
+                android:id="@+id/imageView62"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
+
+            <ImageView
+                android:id="@+id/imageView63"
                 android:layout_width="44dp"
                 android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@android:color/holo_orange_light" />
 
-            <Button
-                android:id="@+id/button61"
-                android:layout_width="44dp"
+            <ImageView
+                android:id="@+id/imageView64"
+                android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button62"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
-
-            <Button
-                android:id="@+id/button63"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@android:color/holo_orange_light" />
-
-            <Button
-                android:id="@+id/button64"
-                android:layout_width="44dp"
-                android:layout_height="45dp"
-                android:background="@drawable/chess2" />
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chess3" />
 
         </TableRow>
 
