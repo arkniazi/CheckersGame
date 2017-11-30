@@ -29,6 +29,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
+                android:focusable="true"
                 app:srcCompat="@drawable/chess2" />
 
             <ImageView
