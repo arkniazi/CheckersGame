@@ -10,21 +10,24 @@ import android.widget.ImageView;
 
 public class Check {
     Activity context;
-    ImageView imageView = null;
+    private ImageView imageView = null;
+    static boolean selected = false;
+    static ImageView imageViewSelected ;
+
 
     Check(ImageView imageView, Activity context) {
         this.imageView = imageView;
         this.context = context;
     }
 
-    public void check() {
+    public void checkAndMove() {
         if (imageView.getTag().equals("pawnP1")) {
             String s = String.valueOf(imageView.getId());
             String l[] = s.split("\\.");
             String str = (l[l.length - 1]);
             int id = Integer.parseInt(str.substring(9));
             checkFront(id,7,9);
-            int left = imageView.getResources().getIdentifier("imageView" + (id + 7), "drawable", context.getPackageName());
+//            int left = imageView.getResources().getIdentifier("imageView" + (id + 7), "drawable", context.getPackageName());
 
 
         }else if (imageView.getTag().equals("queenP1")){
@@ -58,7 +61,7 @@ public class Check {
                 setMovable(imleft);
             }
             if (imageView.getTag()!=imleft.getTag() && !imleft.getTag().equals("void")){
-                
+
 
             }
 

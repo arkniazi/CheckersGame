@@ -1,5 +1,6 @@
 package com.example.cracker.gameboard;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,9 +11,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static android.R.attr.button;
+import static android.R.attr.theme;
+
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<ImageView> arrayList = null;
+
+    static ImageView imageViewSelected;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +32,18 @@ public class MainActivity extends AppCompatActivity {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(),v.getId()+"",Toast.LENGTH_SHORT).show();
+
+                     Check check = new Check((ImageView) v, (Activity) getApplicationContext());
+                    if(check.selected){
+
+
+                    }
+                    else {
+
+                        Check.selected = true;
+                        Check.imageViewSelected = (ImageView) v;
+                    }
+
 
                 }
             });
