@@ -3,6 +3,7 @@ package com.example.cracker.gameboard;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,6 +18,7 @@ import static android.R.attr.theme;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<ImageView> arrayList = null;
+    static boolean turn;
 
     static ImageView imageViewSelected;
     @Override
@@ -33,17 +35,32 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                     Check check = new Check((ImageView) v, (Activity) getApplicationContext());
-                    if(check.selected){
+                    String[] s = ((String) v.getTag()).split("-");
+                    ImageView imageView1 = (ImageView) v;
+                    Log.d("ID of image", String.valueOf(imageView1.getTag()));
 
-
-                    }
-                    else {
-
-                        Check.selected = true;
-                        Check.imageViewSelected = (ImageView) v;
-                    }
-
+//                    if((turn && s[s.length-1].equals("p1") ) || (!turn && s[s.length-1].equals("p2"))) {
+//
+//                        Check.selected = true;
+//                        Check.imageViewSelected = (ImageView) v;
+//
+//                    }
+//                    else if (!turn && v.getTag().equals("void")) {
+//
+//                        if (Check.selected ){
+//
+//                            Check check = new Check((ImageView) v, (Activity) getApplicationContext());
+//                            if(check.checkAndMove()){
+//                                if(turn){
+//                                    turn = false;
+//                                }
+//                                else {
+//                                    turn = true;
+//                                }
+//                            }
+//                        }
+//
+//                    }
 
                 }
             });

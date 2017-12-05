@@ -20,23 +20,22 @@ public class Check {
         this.context = context;
     }
 
-    public void checkAndMove() {
-        if (imageView.getTag().equals("pawnP1")) {
-            String s = String.valueOf(imageView.getId());
-            String l[] = s.split("\\.");
-            String str = (l[l.length - 1]);
-            int id = Integer.parseInt(str.substring(9));
-            checkFront(id,7,9);
-//            int left = imageView.getResources().getIdentifier("imageView" + (id + 7), "drawable", context.getPackageName());
+    public boolean checkAndMove() {
 
+        String s = (String) imageViewSelected.getTag();
 
-        }else if (imageView.getTag().equals("queenP1")){
+        if(imageView.getTag().equals("pawn_p1")){
 
-        }else if (imageView.getTag().equals("pawnP2")){
+            check(7,9);
 
-        }else if (imageView.getTag().equals("queenP2")){
+        }else if (imageView.getTag().equals("queen_P1")){
+
+        }else if (imageView.getTag().equals("pawn_P2")){
+
+        }else if (imageView.getTag().equals("queen_P2")){
 
         }
+        return true;
     }
 
     public void transition(int first,int second){
@@ -53,21 +52,10 @@ public class Check {
     }
 
 
-    public void checkFront(int id, int left, int right ){
-        if ( (id+left)>0 && (id+left)<64   ){
-           left = context.getResources().getIdentifier("imageView"+(id+left),"drawable",context.getPackageName());
-           ImageView imleft = (ImageView) context.findViewById(left);
-            if (imleft.getTag().equals("void")){
-                setMovable(imleft);
-            }
-            if (imageView.getTag()!=imleft.getTag() && !imleft.getTag().equals("void")){
+    public void check(int left, int right ){
+        String  s = String.valueOf(imageViewSelected.getId());
 
-
-            }
-
-        }
-
-
+        left = context.getResources().getIdentifier("imageView"+(left),"drawable",context.getPackageName());
 
     }
     public void checkBack(){
