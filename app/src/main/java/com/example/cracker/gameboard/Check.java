@@ -1,7 +1,8 @@
 package com.example.cracker.gameboard;
 
 import android.app.Activity;
-import android.content.Context;
+import android.graphics.Color;
+import android.util.Log;
 import android.widget.ImageView;
 
 /**
@@ -12,7 +13,7 @@ public class Check {
     Activity context;
     private ImageView imageView = null;
     static boolean selected = false;
-    static ImageView imageViewSelected ;
+    static ImageView imageViewSelected;
 
 
     Check(ImageView imageView, Activity context) {
@@ -24,26 +25,41 @@ public class Check {
 
         String s = (String) imageViewSelected.getTag();
 
-        if(imageView.getTag().equals("pawn_p1")){
+            transition();
+        if (imageView.getTag().equals("pawn_p1")) {
 
-            check(7,9);
+            //check(7, 9);
 
-        }else if (imageView.getTag().equals("queen_P1")){
+        } else if (imageView.getTag().equals("queen_P1")) {
 
-        }else if (imageView.getTag().equals("pawn_P2")){
+        } else if (imageView.getTag().equals("pawn_P2")) {
 
-        }else if (imageView.getTag().equals("queen_P2")){
+        } else if (imageView.getTag().equals("queen_P2")) {
 
         }
         return true;
     }
 
-    public void transition(int first,int second){
+    public void transition() {
 
+        Log.d(" Transition"," going here");
+//        BitmapDrawable bitmap = ((BitmapDrawable) imageViewSelected.getDrawable());
+//        Log.d("Package Name",imageViewSelected.getResources().getResourcePackageName(0));
+        imageView.setImageDrawable(imageViewSelected.getDrawable());
 
+//        Bitmap bit = bitmap.getBitmap();
+//        imageView.setImageBitmap(bit);
+
+//        imageView.setImageBitmap(BitmapFactory.decodeResource(context.getResources(),
+//                imageViewSelected.getId()));
+        imageView.setTag(imageViewSelected.getTag());
+
+        imageViewSelected.setTag("void");
+        imageViewSelected.setImageBitmap(null);
+        imageViewSelected.setBackgroundColor(Color.BLACK);
     }
 
-    public void setMovable(ImageView image){
+    public void setMovable(ImageView image) {
 //        Resources res = context.getResources();
 //        final ImageView image = (ImageView) findViewById(R.id.imageId);
 //        final int newColor = res.getColor(R.color.new_color);
@@ -52,12 +68,49 @@ public class Check {
     }
 
 
-    public void check(int left, int right ){
-        String  s = String.valueOf(imageViewSelected.getId());
+    public void check(int left, int right) {
+        String imageSelectedName = imageViewSelected.getResources().getResourceEntryName(imageViewSelected.getId());
+        int imageSelectedInt = mySplit(imageSelectedName, "imagView");
+        String imageName = imageView.getResources().getResourceEntryName(imageView.getId());
+        int imageInt = mySplit(imageName, "imagView");
 
-        left = context.getResources().getIdentifier("imageView"+(left),"drawable",context.getPackageName());
+        if ((imageSelectedInt == imageInt - left) || (imageSelectedInt == imageInt + left)
+                || (imageSelectedInt == imageInt - right) || (imageSelectedInt == imageInt + right)) {
+
+        } else if (imageSelectedInt == imageInt - 2 * left) {
+            isOppnent(imageInt - left);
+        } else if (imageSelectedInt == imageInt + 2 * left) {
+
+        } else if (imageSelectedInt == imageInt - 2 * right) {
+
+        } else if (imageSelectedInt == imageInt + 2 * right) {
+//            isOppnent();
+        }
+
+        left = context.getResources().getIdentifier("imageView" + (left), "drawable", context.getPackageName());
 
     }
+
+    public boolean isOppnent(int x) {
+        int a = context.getResources().getIdentifier("imageView" + x, "drawable", context.getPackageName());
+        ImageView imageKill = (ImageView) context.findViewById(a);
+        if (imageKill.getTag().equals(imageViewSelected.getTag())) {
+            return true;
+        } else if (true) {
+            return true;
+        }
+            return true;
+    }
+
+
+
+
+    public int mySplit(String toBeSplit,String expression){
+        String ss[] = toBeSplit.split(expression);
+
+        return Integer.parseInt(ss[ss.length-1]);
+    }
+
     public void checkBack(){
 
     }
