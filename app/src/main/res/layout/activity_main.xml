@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Button" />
+        android:text="Opponent" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -227,7 +227,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@android:color/black" />
+                android:background="@android:color/black" />
 
             <ImageView
                 android:id="@+id/imageView27"
@@ -241,7 +241,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@android:color/black" />
+                android:background="@android:color/black" />
 
             <ImageView
                 android:id="@+id/imageView29"
@@ -255,7 +255,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@android:color/black" />
+                android:background="@android:color/black" />
 
             <ImageView
                 android:id="@+id/imageView31"
@@ -269,7 +269,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@android:color/black" />
+                android:background="@android:color/black" />
 
         </TableRow>
 
@@ -284,7 +284,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@android:color/black" />
+                android:background="@android:color/black" />
 
             <ImageView
                 android:id="@+id/imageView34"
@@ -298,7 +298,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@android:color/black" />
+                android:background="@android:color/black" />
 
             <ImageView
                 android:id="@+id/imageView36"
@@ -312,7 +312,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@android:color/black" />
+                android:background="@android:color/black" />
 
             <ImageView
                 android:id="@+id/imageView38"
@@ -326,7 +326,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                app:srcCompat="@android:color/black" />
+                android:background="@android:color/black" />
 
             <ImageView
                 android:id="@+id/imageView40"
@@ -534,5 +534,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Button" />
+        android:text="Yourturn" />
 </LinearLayout>

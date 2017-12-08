@@ -21,38 +21,56 @@ public class Check {
         this.context = context;
     }
 
-    public boolean checkAndMove() {
+    public boolean move() {
 
-        String s = (String) imageViewSelected.getTag();
+        if (imageViewSelected.getTag().equals("pawn_P1")) {
 
-            transition();
-        if (imageView.getTag().equals("pawn_p1")) {
+            if(check(7) || check(9)){
+                transition("pawn_P1");
+                return true;
+            }else if (check(14) && isOppnent(7)){
+                kill(7);
+                transition("pawn_P1");
+                return true;
+            } else if ((check(18) && isOppnent(9))) {
+                kill(9);
+                transition("pawn_P1");
+                return true;
+            }
 
-            //check(7, 9);
 
-        } else if (imageView.getTag().equals("queen_P1")) {
+        } else if (imageViewSelected.getTag().equals("queen_P1")) {
 
-        } else if (imageView.getTag().equals("pawn_P2")) {
+        } else if (imageViewSelected.getTag().equals("pawn_P2")) {
+            if(check(-7) || check(-9)){
+                transition("pawn_P2");
+                return true;
+            }else if (check(-14) && isOppnent(-7)){
+                kill(-7);
+                transition("pawn_P2");
+                return true;
+            }else if  (check(-18) && isOppnent(-9)) {
+                kill(-9);
+                transition("pawn_P2");
+                return true;
+            }
 
-        } else if (imageView.getTag().equals("queen_P2")) {
+        } else if (imageViewSelected.getTag().equals("queen_P2")) {
 
         }
-        return true;
+        return false;
     }
 
-    public void transition() {
+    public void transition(String s) {
 
-        Log.d(" Transition"," going here");
-//        BitmapDrawable bitmap = ((BitmapDrawable) imageViewSelected.getDrawable());
-//        Log.d("Package Name",imageViewSelected.getResources().getResourcePackageName(0));
-        imageView.setImageDrawable(imageViewSelected.getDrawable());
-
-//        Bitmap bit = bitmap.getBitmap();
-//        imageView.setImageBitmap(bit);
-
-//        imageView.setImageBitmap(BitmapFactory.decodeResource(context.getResources(),
-//                imageViewSelected.getId()));
-        imageView.setTag(imageViewSelected.getTag());
+        Log.d(" Transition",s);
+        if (s.equals("pawn_P1")){
+            imageView.setTag("pawn_P1");
+            imageView.setBackgroundResource(R.drawable.chess2);
+        }else if(s.equals("pawn_P2")){
+            imageView.setTag("pawn_P2");
+            imageView.setBackgroundResource(R.drawable.chess3);
+        }
 
         imageViewSelected.setTag("void");
         imageViewSelected.setImageBitmap(null);
@@ -68,37 +86,43 @@ public class Check {
     }
 
 
-    public void check(int left, int right) {
-        String imageSelectedName = imageViewSelected.getResources().getResourceEntryName(imageViewSelected.getId());
-        int imageSelectedInt = mySplit(imageSelectedName, "imagView");
-        String imageName = imageView.getResources().getResourceEntryName(imageView.getId());
-        int imageInt = mySplit(imageName, "imagView");
+    public boolean check  (int left) {
 
-        if ((imageSelectedInt == imageInt - left) || (imageSelectedInt == imageInt + left)
-                || (imageSelectedInt == imageInt - right) || (imageSelectedInt == imageInt + right)) {
+        String imageSelectedName = context.getResources().getResourceEntryName(imageViewSelected.getId());
+        int imageSelectedInt = mySplit(imageSelectedName, "imageView");
+        String imageName = context.getResources().getResourceEntryName(imageView.getId());
+        int imageInt = mySplit(imageName, "imageView");
+        Log.d(" Integers ",imageInt +" "+imageSelectedInt+" "+left);
 
-        } else if (imageSelectedInt == imageInt - 2 * left) {
-            isOppnent(imageInt - left);
-        } else if (imageSelectedInt == imageInt + 2 * left) {
 
-        } else if (imageSelectedInt == imageInt - 2 * right) {
-
-        } else if (imageSelectedInt == imageInt + 2 * right) {
-//            isOppnent();
+        if ( (imageInt == (imageSelectedInt + left))) {
+            return true;
         }
+        else
+            return false;
 
-        left = context.getResources().getIdentifier("imageView" + (left), "drawable", context.getPackageName());
+    }
+    public void kill(int remove){
+        String imageSelectedName = context.getResources().getResourceEntryName(imageViewSelected.getId());
+        int imageSelectedInt = mySplit(imageSelectedName, "imageView");
+        remove = context.getResources().getIdentifier("imageView" + (remove+imageSelectedInt), "id" , context.getPackageName());
+        ImageView imageRemove = (ImageView) context.findViewById(remove);
+        imageRemove.setTag("void");
+        imageRemove.setImageBitmap(null);
+        imageRemove.setBackgroundColor(Color.BLACK);
 
     }
 
     public boolean isOppnent(int x) {
-        int a = context.getResources().getIdentifier("imageView" + x, "drawable", context.getPackageName());
-        ImageView imageKill = (ImageView) context.findViewById(a);
-        if (imageKill.getTag().equals(imageViewSelected.getTag())) {
-            return true;
-        } else if (true) {
-            return true;
-        }
+        String imageSelectedName = context.getResources().getResourceEntryName(imageViewSelected.getId());
+        int imageSelectedInt = mySplit(imageSelectedName, "imageView");
+
+        int a = context.getResources().getIdentifier("imageView"+(x+imageSelectedInt), "id", context.getPackageName());
+        ImageView oppenent= (ImageView) context.findViewById(a);
+        Log.d(" Tag of oppenent ", x+imageSelectedInt+"");
+        if (oppenent.getTag().equals(imageViewSelected.getTag())) {
+            return false;
+        } else
             return true;
     }
 

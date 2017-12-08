@@ -1,9 +1,12 @@
 package com.example.cracker.gameboard;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView=null;
         new CreateArr().add();
 //        Log.i("Arra",""+arrayList.size());
+        final Context context = this;
         for(int i = 0;i<arrayList.size();i++){
 
             imageView = arrayList.get(i);
@@ -29,26 +33,32 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
 
 
+                    Button buttonProfile = (Button) findViewById(R.id.profile);
+                    Button buttonProfile1 = (Button) findViewById(R.id.profile1);
                     String[] s = ((String) v.getTag()).split("-");
                     Log.d(" Tag", (String) v.getTag());
                     Log.d("ID of image", v.getResources().getResourceEntryName(v.getId()));
-
-                    if(!Check.selected && !v.getTag().equals("void")) {
+                    if ((turn && v.getTag().equals("pawn_P1")) || (!turn && v.getTag().equals("pawn_P2"))){
 
                         Check.selected = true;
                         Check.imageViewSelected = (ImageView) v;
-
                     }
                     else if (Check.selected && v.getTag().equals("void")) {
 
-                            Check check = new Check((ImageView) v, getParent());
-                            check.transition();
-                            if(check.checkAndMove()){
+                            Check check = new Check((ImageView) v, (Activity) context);
+
+                            if(check.move()){
                                 if(turn){
                                     turn = false;
+                                    buttonProfile1.setText(" Your Turn");
+                                    buttonProfile.setText(" Opponent");
+
                                 }
                                 else {
                                     turn = true;
+
+                                    buttonProfile.setText(" Your Turn");
+                                    buttonProfile1.setText(" Opponent");
                                 }
                             }
                             Check.selected = false;
@@ -133,10 +143,10 @@ public class MainActivity extends AppCompatActivity {
             for(int a=0;a<arrayList.size();a++ ){
                 ImageView imagetag = arrayList.get(a);
                 if(a<12){
-                imagetag.setTag("pawn_p1");
+                imagetag.setTag("pawn_P1");
                 }
-                else if(a>21){
-                    imagetag.setTag("pawn_p2");
+                else if(a>19){
+                    imagetag.setTag("pawn_P2");
 
                 }
                 else{
