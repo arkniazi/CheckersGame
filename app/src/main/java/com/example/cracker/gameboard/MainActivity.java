@@ -9,22 +9,68 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<ImageView> arrayList = null;
-    static boolean turn;
+    private Context context = this;
+//    private String myTag;
+    private ImageView imageView;
+    GameManager gameManager;
+    static String myTag;
+    static String turn;
+    static DataSnapshot dataSnapshot;
+    static ArrayList<ImageView> arrayList = null;
+//    static boolean turn;
 
-    static ImageView imageViewSelected;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView imageView=null;
+        gameManager = new GameManager(this);
+        gameManager.setTurn("Player 1");
+//        ImageView imageView=null;
+//        email= FirebaseAuth.getInstance().getCurrentUser().getEmail();
         new CreateArr().add();
+//        dataSnapshot.getRef().addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                if(dataSnapshot.child("Turn").getValue().equals(myTag) && !dataSnapshot.child("Image Selected").equals(" ")){
+//                    String imageName = dataSnapshot.child("Image").getValue().toString();
+//                    String imageNameSelected = dataSnapshot.child("Image Selected").getValue().toString();
+//                    String imageKill = dataSnapshot.child("Image Kill").getValue().toString();
+//
+//                    Transition transition = new Transition((Activity) context);
+//                    if (!(imageName.equals(" ") && imageNameSelected.equals(" "))){
+//
+//                        turn = dataSnapshot.child("Turn").getValue().toString();
+//                        imageView = (ImageView) findViewById(getBaseContext().getResources().getIdentifier(imageName,"id",getPackageName()));
+//                        Check.imageViewSelected = (ImageView) findViewById(getBaseContext().getResources().getIdentifier(imageNameSelected,"id",getPackageName()));
+//                        transition.swap(imageView);
+//                    }
+//                    if (!imageKill.equals(" ")){
+//
+//                        transition.kill(Integer.parseInt(imageKill));
+//                    }
+//                    dataSnapshot.child("Image").getRef().setValue(" ");
+//                    dataSnapshot.child("Image Selected").getRef().setValue(" ");
+//                    dataSnapshot.child("Image Kill").getRef().setValue(" ");
+//
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
 //        Log.i("Arra",""+arrayList.size());
-        final Context context = this;
         for(int i = 0;i<arrayList.size();i++){
 
             imageView = arrayList.get(i);
@@ -35,40 +81,72 @@ public class MainActivity extends AppCompatActivity {
 
                     Button buttonProfile = (Button) findViewById(R.id.profile);
                     Button buttonProfile1 = (Button) findViewById(R.id.profile1);
-                    String[] s = ((String) v.getTag()).split("-");
+                    String[] s = ((String) v.getTag()).split("_");
                     Log.d(" Tag", (String) v.getTag());
                     Log.d("ID of image", v.getResources().getResourceEntryName(v.getId()));
-                    if ((turn && v.getTag().equals("pawn_P1")) || (!turn && v.getTag().equals("pawn_P2"))){
+                    if((gameManager.getTurn().equals("Player 1") && s[s.length-1].equals("P1")) ||
+                            (gameManager.getTurn().equals("Player 2") && s[s.length].equals("P2"))){
+//                    if ((myTag.equals("Player 1") && myTag.equals(turn) && v.getTag().equals("pawn_P1")) ||
+//                            (myTag.equals("Player 2") && myTag.equals(turn) && v.getTag().equals("pawn_P2"))){
 
-                        Check.selected = true;
-                        Check.imageViewSelected = (ImageView) v;
+                        gameManager.setSelected(true);
+                        gameManager.setImageSelected((ImageView) v);
+//                        Check.selected = true;
+//                        Check.imageViewSelected = (ImageView) v;
                     }
-                    else if (Check.selected && v.getTag().equals("void")) {
+                    else if (gameManager.isSelected() && v.getTag().equals("void")) {
 
-                            Check check = new Check((ImageView) v, (Activity) context);
 
-                            if(check.move()){
-                                if(turn){
-                                    turn = false;
+                            if(gameManager.isLegal((ImageView) v)){
+                                if(gameManager.getTurn().equals("Player 1")){
+                                    gameManager.setTurn("Player 2");
+//                                    turn = false;
                                     buttonProfile1.setText(" Your Turn");
                                     buttonProfile.setText(" Opponent");
 
                                 }
                                 else {
-                                    turn = true;
+                                    gameManager.setTurn("Player 1");
+//                                    turn = true;
 
                                     buttonProfile.setText(" Your Turn");
                                     buttonProfile1.setText(" Opponent");
                                 }
+//                                 dataSnapshot.child("Image Selected").getRef().setValue(context.getResources().
+//                                     getResourceEntryName(Check.imageViewSelected.getId()));
+//                                dataSnapshot.child("Image").getRef().setValue(context.getResources().
+//                                    getResourceEntryName(v.getId()));
+//
+//                                 if (myTag.equals("Player 1")){
+//                                     dataSnapshot.child("Turn").getRef().setValue("Player 2");
+//
+//                                 }
+//                                else {
+//                                     dataSnapshot.child("Turn").getRef().setValue("Player 1");
+//                                 }
+//                                 if (Check.killImage>0){
+//                                     dataSnapshot.child("Image Kill").getRef().setValue(Check.killImage);
+//                                     Check.killImage = 0;
+//                                 }
                             }
-                            Check.selected = false;
-                            Check.imageViewSelected = null;
+
+                        gameManager.setSelected(false);
+                        gameManager.setImageSelected(null);
+
+//                            Check.selected = false;
+//                            Check.imageViewSelected = null;
                     }
 
                 }
             });
         }
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dataSnapshot.child("State").getRef().setValue("Completed");
     }
 
     public class CreateArr{
