@@ -1,4 +1,4 @@
-# Game
+# Checkers Game
 Mulitplayer Checkers Game(Android). Implemented using Firebase.
 
 I implemented this game as part of my college project. 
